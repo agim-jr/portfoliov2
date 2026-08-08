@@ -205,7 +205,9 @@ nav,
 
 */
 #landing-page {
-  min-height: 100vh;
+    min-height: 100vh;
+    position: relative;
+    z-index: 1; /* Creates a stacking context for content */
 }
 
 .header {
@@ -659,8 +661,9 @@ footer {
 
 */
 .shape {
-  position: fixed;
-  z-index: 1;
+    position: absolute;
+    z-index: -1;          /* This is what keeps them in the background! */
+    pointer-events: none; /* Keeps them from blocking clicks */
 }
 .shape--0 {
   top: 15vh;
